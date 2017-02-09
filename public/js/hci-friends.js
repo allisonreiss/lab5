@@ -5,16 +5,22 @@ $(document).ready(function() {
 	initializePage();
 })
 
+function nameClick(e) {
+	e.preventDefault();
+	$(this).text(anagrammedName($(this).text()));
+}
+
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".names").click(nameClick);
 }
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
-	
+	// console.log(name);
 	if (name == "Doug Engelbart") {
 		return "Notable Grudge";
 	} 
